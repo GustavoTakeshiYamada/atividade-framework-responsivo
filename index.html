@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+
+    <title>Projeto Responsivo</title>
+
+    <style>
+
+        /* ============================== */
+        /* MENU */
+        /* ============================== */
+
+        .menu-personalizado {
+            width: 100%;
+        }
+
+        .menu-conteudo {
+            display: flex;
+            width: 100%;
+        }
+
+        .menu-item {
+            flex: 1;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            min-height: 3.25rem;
+
+            border-right: 1px solid #dbdbdb;
+
+            color: #363636;
+        }
+
+        .menu-item:last-child {
+            border-right: none;
+        }
+
+        .menu-item:hover {
+            background-color: #f5f5f5;
+        }
+
+
+        /* ============================== */
+        /* BOTÃO DO MENU NO CELULAR */
+        /* ============================== */
+
+        .menu-burger {
+            display: none;
+        }
+
+
+        /* ============================== */
+        /* RESPONSIVIDADE */
+        /* ============================== */
+
+        @media screen and (max-width: 1023px) {
+
+            .menu-conteudo {
+                display: none;
+                flex-direction: column;
+            }
+
+            .menu-conteudo.is-active {
+                display: flex;
+            }
+
+            .menu-item {
+                border-right: none;
+                border-bottom: 1px solid #dbdbdb;
+            }
+
+            .menu-item:last-child {
+                border-bottom: none;
+            }
+
+            .menu-burger {
+                display: flex;
+                margin-left: auto;
+            }
+
+        }
+
+
+        /* ============================== */
+        /* MODAL CENTRALIZADO */
+        /* ============================== */
+
+        #meuModal .modal-content {
+            margin: auto;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================== -->
+    <!-- MENU -->
+    <!-- ============================== -->
+
+    <nav class="navbar menu-personalizado" role="navigation">
+
+        <div class="menu-conteudo" id="menu">
+
+            <a class="menu-item" href="#inicio">
+                <strong>Meu Site</strong>
+            </a>
+
+            <a class="menu-item" href="#inicio">
+                Início
+            </a>
+
+            <a class="menu-item" href="#animais">
+                Animais
+            </a>
+
+            <a class="menu-item" href="#contato">
+                Contato
+            </a>
+
+        </div>
+
+
+        <a role="button"
+           class="navbar-burger menu-burger"
+           id="menuBotao"
+           aria-label="menu"
+           aria-expanded="false">
+
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- ============================== -->
+    <!-- INÍCIO -->
+    <!-- ============================== -->
+
+    <section class="section" id="inicio">
+
+        <div class="container">
+
+            <h1 class="title">
+                Meu projeto responsivo
+            </h1>
+
+            <p class="subtitle">
+                Estou aprendendo HTML, CSS e JavaScript.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================== -->
+    <!-- TABELA -->
+    <!-- ============================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="title is-3">
+                Animais
+            </h2>
+
+            <div class="table-container">
+
+                <table class="table is-striped is-hoverable is-fullwidth">
+
+                    <thead>
+
+                        <tr>
+                            <th>Animal</th>
+                            <th>Habitat</th>
+                            <th>Continente</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Onça-pintada</td>
+                            <td>Floresta</td>
+                            <td>América do Sul</td>
+                        </tr>
+
+                        <tr>
+                            <td>Harpia</td>
+                            <td>Floresta</td>
+                            <td>América do Sul</td>
+                        </tr>
+
+                        <tr>
+                            <td>Panda-gigante</td>
+                            <td>Floresta</td>
+                            <td>Ásia</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================== -->
+    <!-- FORMULÁRIO -->
+    <!-- ============================== -->
+
+    <section class="section" id="contato">
+
+        <div class="container">
+
+            <h2 class="title is-3">
+                Formulário
+            </h2>
+
+            <form>
+
+                <div class="field">
+
+                    <label class="label">
+                        Nome
+                    </label>
+
+                    <div class="control">
+
+                        <input
+                            class="input"
+                            type="text"
+                            placeholder="Digite seu nome">
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label class="label">
+                        E-mail
+                    </label>
+
+                    <div class="control">
+
+                        <input
+                            class="input"
+                            type="email"
+                            placeholder="Digite seu e-mail">
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label class="label">
+                        Mensagem
+                    </label>
+
+                    <div class="control">
+
+                        <textarea
+                            class="textarea"
+                            placeholder="Digite sua mensagem"></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <div class="field">
+
+                    <div class="control">
+
+                        <button
+                            class="button is-primary"
+                            type="submit">
+
+                            Enviar
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================== -->
+    <!-- GALERIA -->
+    <!-- ============================== -->
+
+    <section class="section" id="animais">
+
+        <div class="container">
+
+            <h2 class="title is-3">
+                Galeria de animais
+            </h2>
+
+            <div class="columns is-multiline">
+
+
+                <!-- ONÇA-PINTADA -->
+
+                <div class="column is-one-third">
+
+                    <figure class="image">
+
+                        <img
+                            src="https://www.worldanimalprotection.org.br/cdn-cgi/image/width%3D1200%2Cheight%3D630%2Cgravity%3D0.5x0.5%2Cfit%3Dcrop/contentassets/656a72d268634965aaebcdc20121110b/oncapintada.jpg"
+                            alt="Onça-pintada">
+
+                    </figure>
+
+                    <p class="has-text-centered">
+                        <strong>Onça-pintada</strong>
+                    </p>
+
+                </div>
+
+
+                <!-- HARPIA -->
+
+                <div class="column is-one-third">
+
+                    <figure class="image">
+
+                        <img
+                            src="https://s3.amazonaws.com/media.wikiaves.com.br/images/5637/7365831g_c0a6086e3fd4dade1a2b24198e301702.jpg"
+                            alt="Harpia">
+
+                    </figure>
+
+                    <p class="has-text-centered">
+                        <strong>Harpia</strong>
+                    </p>
+
+                </div>
+
+
+                <!-- PANDA-GIGANTE -->
+
+                <div class="column is-one-third">
+
+                    <figure class="image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1691430211332-6a00172479f9?auto=format&fit=crop&fm=jpg&q=80&w=1000"
+                            alt="Panda-gigante">
+
+                    </figure>
+
+                    <p class="has-text-centered">
+                        <strong>Panda-gigante</strong>
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ============================== -->
+    <!-- MODAL -->
+    <!-- ============================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <h2 class="title is-3">
+                Informações
+            </h2>
+
+            <button
+                class="button is-primary"
+                id="abrirModal">
+
+                Saiba mais
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="modal" id="meuModal">
+
+        <div class="modal-background"></div>
+
+        <div class="modal-content">
+
+            <div class="box">
+
+                <h2 class="title">
+                    Sobre o projeto
+                </h2>
+
+                <p>
+                    Este projeto demonstra o uso de HTML,
+                    CSS, JavaScript e o framework Bulma.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+            class="modal-close is-large"
+            aria-label="fechar">
+        </button>
+
+    </div>
+
+
+
+    <!-- ============================== -->
+    <!-- JAVASCRIPT -->
+    <!-- ============================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
